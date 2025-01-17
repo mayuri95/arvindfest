@@ -1,0 +1,143 @@
+/* Gallery Page Styles */
+.gallery-intro {
+    padding: 4rem 0 2rem;
+    text-align: center;
+}
+
+.gallery-intro h2 {
+    margin-bottom: 1.5rem;
+}
+
+.gallery-intro p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item figure {
+    margin: 0;
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item figcaption {
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover figcaption {
+    transform: translateY(0);
+}
+
+/* Featured Item */
+.gallery-item.featured {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery-item.featured figcaption {
+    padding: 1.5rem;
+    transform: translateY(0);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.gallery-item.featured h3 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Share Memories Section */
+.share-memories {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    margin-top: 3rem;
+}
+
+.share-memories h2 {
+    margin-bottom: 1.5rem;
+}
+
+.share-memories p {
+    max-width: 600px;
+    margin: 0 auto 1rem;
+    color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .gallery-item.featured {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .gallery-intro {
+        padding: 3rem 1rem 1.5rem;
+    }
+
+    .share-memories {
+        padding: 3rem 1rem;
+    }
+}
+
+/* Loading Animation */
+.gallery-item img.loading {
+    opacity: 0;
+}
+
+/* Optional: Animation for image loading */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.gallery-item img {
+    animation: fadeIn 0.5s ease-in;
+}

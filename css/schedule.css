@@ -1,0 +1,161 @@
+/* Schedule Page Specific Styles */
+.schedule-content {
+    padding: 4rem 0;
+    min-height: calc(100vh - 200px);
+}
+
+.event-details {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.event-details .date,
+.event-details .location {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.schedule-notice {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    font-family: var(--font-primary);
+    font-style: italic;
+}
+
+/* Timeline Styles */
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 120px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 116px;
+    top: 8px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+}
+
+.time {
+    width: 100px;
+    flex-shrink: 0;
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    padding-right: 2rem;
+    text-align: right;
+}
+
+.event {
+    flex-grow: 1;
+    padding-left: 3rem;
+}
+
+.event h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+/* Menu Styles */
+.menu-section {
+    margin: 1rem 0;
+}
+
+.menu-section h4 {
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    margin: 1rem 0 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.menu-items {
+    margin-left: 1rem;
+}
+
+.menu-item {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.dietary {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+}
+
+.feature {
+    font-family: var(--font-primary);
+    font-style: italic;
+    margin: 0.5rem 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.wine-service {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: var(--font-primary);
+    font-style: italic;
+}
+
+.wine-service p {
+    margin-bottom: 0.5rem;
+}
+
+.dietary-legend {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .schedule-content {
+        padding: 2rem 1rem;
+    }
+
+    .timeline::before {
+        left: 90px;
+    }
+
+    .timeline-item::before {
+        left: 86px;
+    }
+
+    .time {
+        width: 70px;
+        font-size: 0.8rem;
+    }
+
+    .event {
+        padding-left: 2rem;
+    }
+
+    .menu-items {
+        margin-left: 0;
+    }
+}

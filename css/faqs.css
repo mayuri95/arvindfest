@@ -1,0 +1,58 @@
+/* FAQs Page Specific Styles */
+.faqs-content {
+    padding: 4rem 0;
+    min-height: calc(100vh - 200px);
+}
+
+.event-details {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.event-details .date,
+.event-details .location {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.faqs-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.faqs-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.faq-item {
+    margin-bottom: 2rem;
+}
+
+.faq-item h3 {
+    font-family: var(--font-primary);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.faq-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .faqs-content {
+        padding: 2rem 1rem;
+    }
+
+    .faqs-section {
+        padding: 1.5rem;
+    }
+}
