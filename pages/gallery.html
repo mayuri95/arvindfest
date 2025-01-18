@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memories of Arvind</title>
+    <title>Memories - ArvindFest</title>
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/gallery.css">
@@ -13,88 +13,49 @@
 </head>
 <body>
     <header class="main-header">
-        <h1>ArvindFest</h1>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="schedule.html">Schedule</a></li>
-                <li><a href="travel.html">Travel</a></li>
-                <li><a href="gallery.html" class="active">Memories</a></li>
-                <li><a href="faqs.html">FAQs</a></li>
-                <li><a href="rsvp.html">RSVP</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <h1>ArvindFest</h1>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="travel.html">Travel</a></li>
+                    <li><a href="gallery.html" class="active">Memories</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="rsvp.html">RSVP</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main class="gallery-content">
-        <section class="gallery-intro">
-            <div class="container">
+        <div class="container">
+            <section class="gallery-section">
                 <h2>Memories of Arvind</h2>
-                <p>A collection of cherished moments and memories that capture Arvind's spirit, joy, and the love he shared with all of us.</p>
-            </div>
-        </section>
-
-        <section class="memory-gallery">
-            <div class="container">
-                <div class="gallery-grid">
-                    <!-- Large featured memory -->
-                    <div class="gallery-item featured">
-                        <figure>
-                            <img src="../images/arvind01.jpg" alt="Featured memory of Arvind">
-                            <figcaption>
-                                <h3>A Bright Spirit</h3>
-                                <p>Arvind's infectious smile and warmth touched everyone around him.</p>
-                            </figcaption>
-                        </figure>
+                
+                <div class="photo-grid">
+                    <!-- Photo grid will be populated with actual photos -->
+                    <div class="photo-item">
+                        <img src="../images/arvind01.jpg" alt="Memory of Arvind">
                     </div>
-
-                    <!-- Regular memories -->
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="/api/placeholder/400/400" alt="Memory of Arvind">
-                            <figcaption>Family gathering, Summer 2023</figcaption>
-                        </figure>
+                    <div class="photo-item">
+                        <img src="../images/arvind-at-work.png" alt="Memory of Arvind">
                     </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="/api/placeholder/400/400" alt="Memory of Arvind">
-                            <figcaption>Celebrating achievements</figcaption>
-                        </figure>
+                    <div class="photo-item large">
+                        <img src="../images/arvind-gita.jpeg" alt="Memory of Arvind">
                     </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="/api/placeholder/400/400" alt="Memory of Arvind">
-                            <figcaption>Making a difference in the community</figcaption>
-                        </figure>
+                    <div class="photo-item">
+                        <img src="/api/placeholder/800/600" alt="Memory of Arvind">
                     </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="/api/placeholder/400/400" alt="Memory of Arvind">
-                            <figcaption>Sharing wisdom and knowledge</figcaption>
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="/api/placeholder/400/400" alt="Memory of Arvind">
-                            <figcaption>Professional excellence</figcaption>
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="/api/placeholder/400/400" alt="Memory of Arvind">
-                            <figcaption>Moments of joy</figcaption>
-                        </figure>
+                    <div class="photo-item">
+                        <img src="/api/placeholder/800/600" alt="Memory of Arvind">
                     </div>
                 </div>
-            </div>
-        </section>
-
-
+            </section>
+        </div>
     </main>
 
     <footer>
