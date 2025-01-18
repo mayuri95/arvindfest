@@ -11,27 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <script>
         // Check if already authenticated
-        if (localStorage.getItem('arvindFestAuth')) {
-            window.location.href = './pages/home.html';
-        }
-    </script>
-</head>
-<body class="login-page">
-    <div class="login-container">
-        <h1>ArvindFest</h1>
-        <div class="password-container">
-            <p>Please enter the password to access the website.</p>
-            <form id="password-form" onsubmit="return checkPassword(event)">
-                <div class="form-group">
-                    <input type="password" id="password-input" required>
-                </div>
-                <p id="password-error" class="error-message"></p>
-                <button type="submit" class="button">Enter</button>
-            </form>
-        </div>
-    </div>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('arvindFestAuth')) {
+                window.location.href = './pages/home.html';
+            }
+        });
 
-    <script>
+        // Password check function
         function checkPassword(event) {
             event.preventDefault();
             
@@ -51,5 +37,20 @@
             return false;
         }
     </script>
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <h1>ArvindFest</h1>
+        <div class="password-container">
+            <p>Please enter the password to access the website.</p>
+            <form id="password-form" onsubmit="return checkPassword(event)">
+                <div class="form-group">
+                    <input type="password" id="password-input" required>
+                </div>
+                <p id="password-error" class="error-message"></p>
+                <button type="submit" class="button">Enter</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
