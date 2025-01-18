@@ -3,60 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celebrating Arvind's Life</title>
+    <title>ArvindFest</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+        // Check if already authenticated
+        if (localStorage.getItem('arvindFestAuth')) {
+            window.location.href = './pages/home.html';
+        }
+    </script>
 </head>
-<body>
-    <header class="main-header">
-        <div class="header-content">
-            <h1>ArvindFest</h1>
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <span class="hamburger"></span>
-            </button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="pages/schedule.html">Schedule</a></li>
-                    <li><a href="pages/travel.html">Travel</a></li>
-                    <li><a href="pages/gallery.html">Memories</a></li>
-                    <li><a href="pages/faqs.html">FAQs</a></li>
-                    <li><a href="pages/rsvp.html">RSVP</a></li>
-                </ul>
-            </nav>
+<body class="login-page">
+    <div class="login-container">
+        <h1>ArvindFest</h1>
+        <div class="password-container">
+            <p>Please enter the password to access the website.</p>
+            <form id="password-form" onsubmit="return checkPassword(event)">
+                <div class="form-group">
+                    <input type="password" id="password-input" required>
+                </div>
+                <p id="password-error" class="error-message"></p>
+                <button type="submit" class="button">Enter</button>
+            </form>
         </div>
-    </header>
+    </div>
 
-    <main class="home-content">
-        <section class="hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h2>A Life Well Lived</h2>
-                <p class="date">March 22, 2025</p>
-                <p class="location">MIT Samberg Center</p>
-            </div>
-        </section>
+    <script>
+        function checkPassword(event) {
+            event.preventDefault();
+            
+            const password = document.getElementById('password-input').value;
+            const errorMessage = document.getElementById('password-error');
+            const correctPassword = 'ARVIND2025';
 
-        <section class="introduction">
-            <div class="container">
-                <p class="intro-text">
-                    Please join us as we gather to celebrate the life and legacy of our beloved Arvind.
-                    Together, we'll share memories, stories, and honor a life that touched so many.
-                </p>
-                <a href="pages/rsvp.html" class="button">RSVP</a>
-            </div>
-        </section>
-    </main>
+            if (password === correctPassword) {
+                localStorage.setItem('arvindFestAuth', 'true');
+                window.location.href = './pages/home.html';
+            } else {
+                errorMessage.textContent = 'Incorrect password. Please try again.';
+                errorMessage.style.display = 'block';
+                document.getElementById('password-input').value = '';
+            }
 
-    <footer>
-        <div class="container">
-            <p>In loving memory</p>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
+            return false;
+        }
+    </script>
 </body>
 </html>

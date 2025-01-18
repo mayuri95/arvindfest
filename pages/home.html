@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrating Arvind's Life</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<script>
+    // Check authentication before page loads
+    if (!localStorage.getItem('arvindFestAuth')) {
+        window.location.href = '../index.html';
+    }
+</script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <h1>ArvindFest</h1>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="pages/schedule.html">Schedule</a></li>
+                    <li><a href="pages/travel.html">Travel</a></li>
+                    <li><a href="pages/gallery.html">Memories</a></li>
+                    <li><a href="pages/faqs.html">FAQs</a></li>
+                    <li><a href="pages/rsvp.html">RSVP</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="home-content">
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2>A Life Well Lived</h2>
+                <p class="date">March 22, 2025</p>
+                <p class="location">MIT Samberg Center</p>
+            </div>
+        </section>
+
+        <section class="introduction">
+            <div class="container">
+                <p class="intro-text">
+                    Please join us as we gather to celebrate the life and legacy of our beloved Arvind.
+                    Together, we'll share memories, stories, and honor a life that touched so many.
+                </p>
+                <a href="pages/rsvp.html" class="button">RSVP</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>In loving memory</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
