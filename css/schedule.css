@@ -1,4 +1,45 @@
-/* Schedule Page Specific Styles */
+/* Speakers section */
+.speakers {
+    margin-top: 1rem;
+}
+
+.speakers h4 {
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.speaker-list {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 0.5rem;
+}
+
+.speaker-list li {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+    .speaker-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .speaker-list {
+        grid-template-columns: 1fr;
+    }
+}/* Schedule Page Specific Styles */
 .schedule-content {
     padding: 4rem 0;
     min-height: calc(100vh - 200px);
