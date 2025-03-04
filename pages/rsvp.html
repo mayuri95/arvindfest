@@ -10,14 +10,54 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<script>
-    // Check authentication before page loads
-    if (!localStorage.getItem('arvindFestAuth')) {
-        window.location.href = '../index.html';
-    }
-</script>
+    <script>
+        // Check authentication before page loads
+        if (!localStorage.getItem('arvindFestAuth')) {
+            window.location.href = '../index.html';
+        }
+    </script>
+    <style>
+        .rsvp-form-section {
+            display: none;
+        }
+        
+        .rsvp-form-section.visible {
+            display: block;
+        }
+        
+        .password-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .password-overlay.hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+    <div id="rsvp-password-overlay" class="password-overlay">
+        <div class="password-container">
+            <h2>RSVP Access</h2>
+            <p>Please enter the password to access the RSVP form. If you do not have the password, please contact Srini at devadas@mit.edu for access.</p>
+            <form id="rsvp-password-form" onsubmit="return checkRsvpPassword(event)">
+                <div class="form-group">
+                    <input type="password" id="rsvp-password-input" required>
+                </div>
+                <p id="rsvp-password-error" class="error-message"></p>
+                <button type="submit" class="button">Enter</button>
+            </form>
+        </div>
+    </div>
+
     <header class="main-header">
         <div class="header-content">
             <h1>ArvindFest</h1>
@@ -39,7 +79,7 @@
 
     <main class="rsvp-content">
         <div class="container">
-            <section class="rsvp-form-section">
+            <section id="rsvp-form-section" class="rsvp-form-section">
                 <h2>RSVP</h2>
                 <p class="form-intro">Please let us know which events you'll be attending.</p>
                 
@@ -57,5 +97,44 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for specific RSVP authorization
+            const isRsvpAuthorized = localStorage.getItem('arvindFestRsvpAuth');
+            const rsvpOverlay = document.getElementById('rsvp-password-overlay');
+            const rsvpFormSection = document.getElementById('rsvp-form-section');
+            
+            if (!isRsvpAuthorized) {
+                rsvpOverlay.classList.remove('hidden');
+                rsvpFormSection.classList.remove('visible');
+            } else {
+                rsvpOverlay.classList.add('hidden');
+                rsvpFormSection.classList.add('visible');
+            }
+        });
+
+        function checkRsvpPassword(event) {
+            event.preventDefault();
+            
+            const password = document.getElementById('rsvp-password-input').value;
+            const errorMessage = document.getElementById('rsvp-password-error');
+            const rsvpFormSection = document.getElementById('rsvp-form-section');
+            // Use a different password for RSVP access
+            const correctPassword = 'rsvp_for_me_2025'
+            
+            if (password === correctPassword) {
+                localStorage.setItem('arvindFestRsvpAuth', 'true');
+                document.getElementById('rsvp-password-overlay').classList.add('hidden');
+                rsvpFormSection.classList.add('visible');
+                errorMessage.style.display = 'none';
+            } else {
+                errorMessage.textContent = 'Incorrect password. Please try again.';
+                errorMessage.style.display = 'block';
+                document.getElementById('rsvp-password-input').value = '';
+            }
+            
+            return false;
+        }
+    </script>
 </body>
 </html>
